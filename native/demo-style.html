@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video.js - Demo</title>
+
+    <!-- Video.js主样式 -->
+    <link href="./css/video-js.css" rel="stylesheet" />
+
+    <!-- Video.js 4种主题：sea、city、forest、fantasy  https://github.com/videojs/themes -->
+    <link href="./css/sea.css" rel="stylesheet" />
+    <link href="./css/city.css" rel="stylesheet" />
+    <link href="./css/forest.css" rel="stylesheet" />
+    <link href="./css/fantasy.css" rel="stylesheet" />
+
+    <!-- 兼容IE8及以下 -->
+    <script src="./js/videojs-ie8.min.js"></script>
+
+    <style>
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            margin-top: 30px;
+        }
+
+        .box {
+            margin: auto;
+            width: 600px;
+        }
+        pre{
+            padding: 30px;
+            font-size: 16px;
+            color: #555;
+            border-radius: 8px;
+            border: 1px solid gray;
+            background: #eee;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Video.js - 4种主题(sea、city、forest、fantasy)</h1>
+    <a href="https://videojs.com" target="_blank" rel="noopener noreferrer">video.js：https://videojs.com</a>，
+    <a href="https://github.com/videojs/themes" target="_blank" rel="noopener noreferrer"> gitHub：https://github.com/videojs/themes</a>
+    <hr>
+    <section class="box">
+        <h2>默认主题：</h2>
+        <video id="my-video" class="video-js" controls preload="auto" width="640" height="264" poster="./img/poster.png"
+            data-setup="{}">
+            <source src="./media/mp4.mp4" type="video/mp4" />
+            <source src="./media/mp4.webm" type="video/webm" />
+            <p class="vjs-no-js">
+                要观看此视频，请启用JavaScript，并考虑升级Web浏览器!
+                <a href="https://videojs.com/html5-video-support/" target="_blank">支持HTML5视频</a>
+            </p>
+        </video>
+
+        <h2>sea主题：</h2>
+        <video id="my-video" class="video-js vjs-theme-sea" controls preload="auto" width="640" height="264"
+            poster="./img/poster.png" data-setup="{}">
+            <source src="./media/mp4.mp4" type="video/mp4" />
+            <source src="./media/mp4.webm" type="video/webm" />
+            <p class="vjs-no-js">
+                要观看此视频，请启用JavaScript，并考虑升级Web浏览器!
+                <a href="https://videojs.com/html5-video-support/" target="_blank">支持HTML5视频</a>
+            </p>
+        </video>
+
+        <h2>city主题：</h2>
+        <video id="my-video" class="video-js vjs-theme-city" controls preload="auto" width="640" height="264"
+            poster="./img/poster.png" data-setup="{}">
+            <source src="./media/mp4.mp4" type="video/mp4" />
+            <source src="./media/mp4.webm" type="video/webm" />
+            <p class="vjs-no-js">
+                要观看此视频，请启用JavaScript，并考虑升级Web浏览器!
+                <a href="https://videojs.com/html5-video-support/" target="_blank">支持HTML5视频</a>
+            </p>
+        </video>
+
+        <h2>forest主题：</h2>
+        <video id="my-video" class="video-js vjs-theme-forest" controls preload="auto" width="640" height="264"
+            poster="./img/poster.png" data-setup="{}">
+            <source src="./media/mp4.mp4" type="video/mp4" />
+            <source src="./media/mp4.webm" type="video/webm" />
+            <p class="vjs-no-js">
+                要观看此视频，请启用JavaScript，并考虑升级Web浏览器!
+                <a href="https://videojs.com/html5-video-support/" target="_blank">支持HTML5视频</a>
+            </p>
+        </video>
+
+        <h2>fantasy主题：</h2>
+        <video id="my-video" class="video-js vjs-theme-fantasy" controls preload="auto" width="640" height="264"
+            poster="./img/poster.png" data-setup="{}">
+            <source src="./media/mp4.mp4" type="video/mp4" />
+            <source src="./media/mp4.webm" type="video/webm" />
+            <p class="vjs-no-js">
+                要观看此视频，请启用JavaScript，并考虑升级Web浏览器!
+                <a href="https://videojs.com/html5-video-support/" target="_blank">支持HTML5视频</a>
+            </p>
+        </video>
+    </section>
+
+
+    <pre>
+        <code>
+        一、直接在html文件中的head中引入
+
+            <!-- Video.js base CSS -->
+            &lt;link href="https://unpkg.com/video.js@7/dist/video-js.min.css" rel="stylesheet">
+            
+            <!-- City -->
+            &lt;link href="https://unpkg.com/@videojs/themes@1/dist/city/index.css" rel="stylesheet">
+            
+            <!-- Fantasy -->
+            &lt;link href="https://unpkg.com/@videojs/themes@1/dist/fantasy/index.css" rel="stylesheet">
+            
+            <!-- Forest -->
+            &lt;link href="https://unpkg.com/@videojs/themes@1/dist/forest/index.css" rel="stylesheet">
+            
+            <!-- Sea -->
+            &lt;link href="https://unpkg.com/@videojs/themes@1/dist/sea/index.css" rel="stylesheet">
+       
+
+
+        二、在JavaScript中使用CSS模块，则可以安装NPM模块：
+
+            npm install --save video.js @videojs/themes
+        
+            //然后，只需像导入其他CSS一样导入文件即可。
+       
+            import 'video.js/dist/video-js.css';
+            
+            // City
+            import '@videojs/themes/dist/city/index.css';
+            
+            // Fantasy
+            import '@videojs/themes/dist/fantasy/index.css';
+            
+            // Forest
+            import '@videojs/themes/dist/forest/index.css';
+            
+            // Sea
+            import '@videojs/themes/dist/sea/index.css';
+            
+
+            在video标签有class属性中 vjs-theme-$ {THEME_NAME}，因此vjs-theme-city代表城市主题，而vjs-theme-sea代表sea主题。
+
+            &lt;video id="my-player" class="video-js vjs-theme-city" > &lt;/video>
+        </code>
+       
+        
+        
+    </pre>
+    
+
+
+    <script src="./js/video.js"></script>
+</body>
+
+</html>

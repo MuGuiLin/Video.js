@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum=1.0, user-scalable=no shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="Expires" content="0" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-control" content="no-cache" />
+    <meta http-equiv="Cache" content="no-cache" />
+    <title>Video.js - Demo</title>
+
+    <!-- Video.js主样式 -->
+    <link href="./css/video-js.css" rel="stylesheet" />
+
+    <!-- Video.js 4种主题：sea、city、forest、fantasy  https://github.com/videojs/themes -->
+    <link href="./css/sea.css" rel="stylesheet" />
+    <link href="./css/city.css" rel="stylesheet" />
+    <link href="./css/forest.css" rel="stylesheet" />
+    <link href="./css/fantasy.css" rel="stylesheet" />
+    
+    <!-- 自定义样式 -->
+    <style>
+        h1, nav{
+            text-align: center;
+        }
+        nav a{
+            font-size: 18px; padding: 20px;
+        }
+
+        .video-box{
+            width: 600px;
+            margin: 30px auto;
+            text-align: center;
+        }
+    </style>
+    
+    <!-- 兼容IE8及以下 -->
+    <script src="./js/videojs-ie8.min.js"></script>
+</head>
+
+<body>
+    <h1>Video.js - Demo</h1>
+    <hr>
+    <nav>
+        <a href="https://videojs.com" target="_blank" rel="noopener noreferrer">官网</a>
+        <a href="https://docs.videojs.com/" target="_blank" rel="noopener noreferrer">Docs文档</a>
+        <a href="https://videojs.com/blog" target="_blank" rel="noopener noreferrer">Blog博客</a>
+        <a href="https://github.com/videojs/themes" target="_blank" rel="noopener noreferrer">Theme主题</a>
+        <a href="https://www.npmjs.com/package/video.js" target="_blank" rel="noopener noreferrer">Npm</a>
+    </nav>
+
+    <section class="video-box">
+        <video id="my-video" class="video-js vjs-theme-fantasy vjs-big-play-centered" controls preload="auto" src="http://elbofang.smgtech.net/live/elearning.m3u8" width="640" height="264" poster="./img/poster.png" data-setup="{}">
+            <!-- <source src="./media/mp4.mp4" type="video/mp4" />
+            <source src="./media/mp4.webm" type="video/webm" /> -->
+            <p class="vjs-no-js">
+                要观看此视频，请启用JavaScript，并考虑升级Web浏览器!
+                <a href="https://videojs.com/html5-video-support/" target="_blank">支持HTML5视频</a>
+            </p>
+        </video>
+    </section>
+
+    <script src="./js/video.js"></script>
+
+    <script>
+        // HTML5在iPhone和iPad内联视频/浏览器 playsinline webkit-playsinline   https://stackoverflow.com/questions/3699552/html5-inline-video-on-iphone-vs-ipad-browser
+    
+    // var player = videojs('my-video');
+
+    var options = {};
+
+    var player = videojs('my-video', options, function onPlayerReady() {
+        videojs.log('Your player is ready!');
+
+        // In this context, `this` is the player that was created by Video.js.
+        this.play();
+
+        // How about an event listener?
+        this.on('ended', function () {
+            videojs.log('Awww...over so soon?!');
+        });
+    });
+
+    </script>
+</body>
+
+</html>
